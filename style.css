@@ -46,6 +46,10 @@ h1 {
     line-height: 1.25;
 }
 
+a {
+    display: inline;
+    text-decoration: none;
+}
 /* 
 
 NAVBAR ↓
@@ -72,7 +76,7 @@ nav {
 
 .nav__links{
     display: flex;
-    padding-bottom: 0 4px;
+    padding-bottom: 4px;
     align-items: center;
 }
 
@@ -83,8 +87,34 @@ nav {
     letter-spacing: 0.35px;
     position: relative;
     border-bottom: 2px solid transparent;
-    /* position: 300ms; */
+    position: 300ms;
     margin: 0 24px;
+}
+
+.nav__link--login {
+    margin-left: 48px;
+}
+
+.nav__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 2px;
+    width: 100%;
+    background: #6415ff ;
+    transition: all 300ms ease;
+    opacity: 0;
+}
+
+.nav__link:hover::after {
+    opacity: 1;
+}
+
+.nav__link--signup::after {
+    content: "";
+    height: 0;
+    width: 0;
 }
 
 .nav__link--signup {
@@ -97,6 +127,11 @@ nav {
     width: auto;
     line-height: 1.5;
     
+}
+
+.nav__link--signup:hover {
+    background-color: #5011cc;
+    color: #fff;
 }
 
 .logo {
